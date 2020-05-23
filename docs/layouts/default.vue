@@ -61,19 +61,19 @@
         <Nuxt class="w-full lg:w-4/5" />
       </div>
     </main>
-    <TheFooter />
+<!--    <TheFooter />-->
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar'
-import TheFooter from '@/components/TheFooter'
+//import TheFooter from '@/components/TheFooter'
 import SearchInput from '@/components/SearchInput'
 
 export default {
   components: {
     Navbar,
-    TheFooter,
+    //TheFooter,
     SearchInput
   },
   computed: {
