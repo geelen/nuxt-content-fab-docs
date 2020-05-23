@@ -1,4 +1,4 @@
-const URL = 'https://content.nuxtjs.org'
+const URL = 'https://fab.dev'
 
 export default {
   target: 'static',
@@ -9,34 +9,34 @@ export default {
   head: {
     titleTemplate: (chunk) => {
       if (chunk) {
-        return `${chunk} - Nuxt Content`
+        return `${chunk} - Frontend Application Bundles`
       }
 
-      return 'Nuxt Content'
+      return 'Frontend Application Bundles'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       // Open Graph
-      { hid: 'og:site_name', property: 'og:site_name', content: 'Nuxt Content' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Frontend Application Bundles' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:url', property: 'og:url', content: URL },
       { hid: 'og:image', property: 'og:image', content: `${URL}/card.png` },
       // Twitter Card
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
-      { hid: 'twitter:site', name: 'twitter:site', content: '@nuxt_js' },
-      { hid: 'twitter:title', name: 'twitter:title', content: 'Nuxt Content' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@fab_spec' },
+      { hid: 'twitter:title', name: 'twitter:title', content: 'Frontend Application Bundles' },
       { hid: 'twitter:image', name: 'twitter:image', content: `${URL}/card.png` },
-      { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'The NuxtJS Framework' }
+      { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'The FAB Project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: '/favicon.png' }
+      { rel: 'icon', type: 'image/png', href: '/favicon-32x32.png' }
     ]
   },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#48bb78' },
+  loading: { color: '#1C6FD8' },
   /*
   ** Plugins to load before mounting the App
   */
@@ -120,10 +120,5 @@ export default {
     lazy: true,
     seo: false,
     langDir: 'i18n/'
-  },
-  ackee: {
-    server: 'https://ackee.nuxtjs.com',
-    domainId: '7b3c9779-442c-40c6-9931-ea71977c52a8',
-    detailed: true
   }
 }
