@@ -1,7 +1,8 @@
 ---
-name: 'Getting Started'
-route: '/guides/getting-started'
-menu: Guides
+title: 'Getting Started'
+description: 'Getting Started with FABs'
+category: Guides
+position: 201
 ---
 
 # Getting Started with FABs

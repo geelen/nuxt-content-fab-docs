@@ -1,7 +1,8 @@
 ---
-name: 'Converting Custom SSR'
-route: '/guides/converting-custom-ssr'
-menu: Guides
+title: Converting Custom SSR
+description: 'Converting Custom SSR'
+position: 299
+category: Guides
 ---
 
 # Converting Custom Server-Side-Rendered to use FABs

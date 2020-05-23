@@ -1,7 +1,8 @@
 ---
-name: 'Contributing'
-route: '/guides/contributing'
-menu: Guides
+title: 'Contributing'
+description: 'Contribution guidelines'
+category: Guides
+position: 299
 ---
 
 # Contributing

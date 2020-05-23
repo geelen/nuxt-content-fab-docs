@@ -1,7 +1,7 @@
 ---
-name: 'Giving Feedback'
-route: '/guides/feedback'
-menu: Guides
+title: 'Giving Feedback'
+category: Guides
+position: 299
 ---
 
 # Giving Feedback

@@ -47,7 +47,6 @@ export default {
   },
   head () {
     return {
-      title: this.doc.title,
       meta: [
         { hid: 'description', name: 'description', content: this.doc.description },
         // Open Graph

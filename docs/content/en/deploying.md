@@ -1,7 +1,7 @@
 ---
 title: Deploying
 description: 'Manually deploy your FAB to the cloud'
-position: 3
+position: 203
 category: Guides
 ---
 

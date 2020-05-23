@@ -1,7 +1,7 @@
 ---
-name: 'Known Project Types'
-route: '/guides/known-project-types'
-menu: Guides
+title: 'Known Project Types'
+position: 202
+category: Guides
 ---
 
 # Known Project Types (for `fab init`)
