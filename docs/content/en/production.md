@@ -1,7 +1,7 @@
 ---
-name: 'Production'
-route: '/kb/production'
-menu: Knowledge Base
+title: 'Production'
+category: Knowledge Base
+position: 999
 ---
 
 # FABs in Production

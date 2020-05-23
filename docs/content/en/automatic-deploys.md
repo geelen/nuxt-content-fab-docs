@@ -1,7 +1,7 @@
 ---
-name: 'Automatic Deploys'
-route: '/kb/automatic-deploys'
-menu: Knowledge Base
+title: 'Automatic Deploys'
+category: Knowledge Base
+position: 999
 ---
 
 # Automatic Deploys

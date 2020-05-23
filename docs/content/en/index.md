@@ -2,7 +2,7 @@
 title: 'Home'
 description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as Git-based Headless CMS.'
 position: 1
-category: Concepts
+category: Home
 features:
   - FABs good
 ---

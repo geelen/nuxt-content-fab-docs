@@ -1,7 +1,7 @@
 ---
-name: 'Plugins'
-route: '/kb/plugins'
-menu: Knowledge Base
+title: 'Plugins'
+category: Knowledge Base
+position: 999
 ---
 
 # Plugins

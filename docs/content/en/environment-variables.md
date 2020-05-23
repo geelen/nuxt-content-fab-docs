@@ -1,7 +1,7 @@
 ---
-name: 'Environment Variables'
-route: '/kb/environment-variables'
-menu: Knowledge Base
+title: 'Environment Variables'
+category: Knowledge Base
+position: 999
 ---
 
 # Environment Variables

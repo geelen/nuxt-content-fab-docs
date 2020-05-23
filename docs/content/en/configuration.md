@@ -1,7 +1,7 @@
 ---
-name: 'Configuration'
-route: '/kb/configuration'
-menu: Knowledge Base
+title: 'Configuration'
+category: Knowledge Base
+position: 999
 ---
 
 # Configuration

@@ -1,7 +1,7 @@
 ---
-name: 'Understanding Assets'
-route: '/kb/understanding-assets'
-menu: Knowledge Base
+title: 'Understanding Assets'
+category: Knowledge Base
+position: 999
 ---
 
 # Understanding Assets

@@ -1,7 +1,7 @@
 ---
-name: 'Settings'
-route: '/kb/settings'
-menu: Knowledge Base
+title: 'Settings'
+category: Knowledge Base
+position: 999
 ---
 
 # FAB Settings

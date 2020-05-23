@@ -1,7 +1,7 @@
 ---
-name: 'Plugin Runtime Responders'
-route: '/kb/plugin-runtime-responders'
-menu: Knowledge Base
+title: 'Plugin Runtime Responders'
+category: Knowledge Base
+position: 999
 ---
 
 # Plugin Runtime Responders

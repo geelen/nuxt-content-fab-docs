@@ -2,6 +2,7 @@
 title: 'Known Project Types'
 position: 202
 category: Guides
+position: 999
 ---
 
 # Known Project Types (for `fab init`)

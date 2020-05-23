@@ -1,7 +1,7 @@
 ---
-name: 'error.fab.dev'
-route: '/kb/error-origin-fallback'
-menu: Knowledge Base
+title: 'error.fab.dev'
+category: Knowledge Base
+position: 999
 ---
 
 Potentially, your hosting infrastructure needs an upstream origin, despite you intending never to use it:

@@ -1,7 +1,7 @@
 ---
-name: 'FAB Structure'
-route: '/kb/fab-structure'
-menu: Knowledge Base
+title: 'FAB Structure'
+category: Knowledge Base
+position: 999
 ---
 
 # FAB Structure

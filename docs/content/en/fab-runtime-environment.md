@@ -1,7 +1,7 @@
 ---
-name: 'Server Component Restrictions'
-route: '/kb/fab-runtime-environment'
-menu: Knowledge Base
+title: 'Server Component Restrictions'
+category: Knowledge Base
+position: 999
 ---
 
 # FAB Server Component Restrictions
