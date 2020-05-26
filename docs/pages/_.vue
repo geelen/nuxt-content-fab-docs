@@ -24,7 +24,7 @@ export default {
     }
   },
   async asyncData ({ $content, store, app, params, error }) {
-    const slug = params.slug || 'index'
+    const slug = params.pathMatch || 'index'
 
     let doc
     try {

@@ -1,6 +1,5 @@
 ---
 title: 'Known Project Types'
-position: 202
 category: Guides
 position: 999
 ---

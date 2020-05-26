@@ -18,7 +18,7 @@
         </div>
         <div class="flex items-center justify-end w-1/6">
           <a
-            href="https://twitter.com/nuxt_js"
+            href="https://twitter.com/fab_spec"
             target="_blank"
             rel="noopener noreferrer"
             title="Twitter"
@@ -28,7 +28,7 @@
             <IconTwitter class="w-6 h-6" />
           </a>
           <a
-            href="https://github.com/nuxt/content"
+            href="https://github.com/fab-spec/fab"
             target="_blank"
             rel="noopener noreferrer"
             title="Github"
