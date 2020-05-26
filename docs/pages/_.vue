@@ -1,15 +1,15 @@
 <template>
   <div class="flex flex-wrap-reverse suka">
     <div
-      class="w-full lg:w-3/4 py-4 lg:pt-8 lg:pb-4 dark:border-gray-800"
-      :class="{ 'lg:border-r': doc.toc && doc.toc.length }">
+      class="w-full xl:w-3/4 py-4 lg:pt-8 lg:pb-4 dark:border-gray-800"
+      :class="{ 'xl:border-r': doc.toc && doc.toc.length }">
       <article class="lg:px-8">
         <nuxt-content :document="doc" />
       </article>
       <EditOnGithub :document="doc" />
       <ArticlePrevNext :prev="prev" :next="next" class="lg:px-8 mt-4" />
     </div>
-    <ArticleToc v-if="doc.toc && doc.toc.length" :toc="doc.toc" />
+    <ArticleToc class="hidden xl:block" v-if="doc.toc && doc.toc.length" :toc="doc.toc" />
   </div>
 </template>
 

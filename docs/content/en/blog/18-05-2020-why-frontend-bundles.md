@@ -10,7 +10,7 @@ Something that just popped up [on Twitter](https://twitter.com/toddgeist/status/
 
 I thought I'd quickly jot down my thoughts on the matter.
 
-### Use FABs for whatever you want
+## Use FABs for whatever you want
 
 Before we start, it's worth pointing out that a FAB is just a zip file of a `server.js` plus any assets you want. Nothing says the assets need to be there, you could have a perfectly-valid FAB with just `server.js` providing some "backend-y" functionality, and use the FAB tooling to deploy it just fine.
 
@@ -20,7 +20,7 @@ In fact, in one of the [discussions on this topic](https://github.com/fab-spec/f
 
 That said, there are good reasons why FABs are designed the way they are, and why "frontend" is an important part of them:
 
-### The real difference between "frontend" and "backend":
+## The real difference between "frontend" and "backend":
 
 So this is partly my fault for using such overloaded terms, (in my defence, the other available terms are worse) but it's worth clarifying what I've come to understand as the true difference between your backend and frontend code, which is your **source of truth**:
 
@@ -65,7 +65,7 @@ These days, however, I've come to realise that the big benefit felt by teams was
 
 In other words, GraphQL made teams faster because it aligned the technology with the underlying sources-of-truth in the system, but it's important to note that _only one half needed to go faster_.
 
-### Speed of Iteration
+## Speed of Iteration
 
 As GraphQL demonstrated, product development improves when your architecture reflects one very important fact: that **your user-experience needs to change vastly more often than your data model does**.
 
@@ -73,7 +73,7 @@ Just think about the number and variety of people who care about your product, e
 
 In my experience, the _only_ path to good UX is via collaboration, using experimentation, testing, feedback & iteration. _Anything_ that speeds up that process has a direct result in the quality of your product. Conversely, the more different systems your "frontend" code covers, the slower your iteration speed, and the worse your overall outcome.
 
-### FABs: "frontend" !== "client side"
+## FABs: "frontend" !== "client side"
 
 Speeding up frontend teams and involving more people in a collaborative effort towards better UX is all well and good, but in practice it's resulted in "frontend" web development being synonymous with "client-side". Indeed, GraphQL's success lies in part to the fact that the queries themselves are part of the client-side codebase, so the frontend developers who operate there can control it.
 
@@ -87,7 +87,7 @@ So, in answer to the original question, **FABs are all about "frontend" code bec
 
 So build FABs, [preview every commit](https://linc.sh), and go fast!
 
-### A thought experiment to finish
+## A thought experiment to finish
 
 > This is something I plan to implement as an example, and I'll replace this with a link to that once it's done, but for now a description will have to suffice.
 
