@@ -38,9 +38,10 @@ export const getDocs = async (that, filter_fn) => {
       const query = that.$content(
         `${that.$i18n.locale}${subdir ? `/${subdir}` : ''}`
       )
-      const dir_docs = await filter_fn(query).fetch()
-      if (subdir)
+      const dir_docs = (await filter_fn(query).fetch()).filter(Boolean)
+      if (subdir) {
         dir_docs.forEach((doc) => (doc.slug = `${subdir}/${doc.slug}`))
+      }
       console.log({ dir_docs })
       docs.push(...dir_docs)
     })

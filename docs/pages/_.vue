@@ -2,10 +2,13 @@
   <div class="flex flex-wrap-reverse suka">
     <div
       class="w-full lg:w-3/4 py-4 lg:pt-8 lg:pb-4 dark:border-gray-800"
-      :class="{ 'lg:border-r': doc.toc && doc.toc.length }"
-    >
+      :class="{ 'lg:border-r': doc.toc && doc.toc.length }">
       <article class="lg:px-8">
-        <h1 v-if="doc.title !== 'Home'" class="text-4xl font-black mb-4 leading-none">{{ doc.title }}</h1>
+        <h1
+          v-if="doc.title !== 'Home'"
+          class="text-4xl font-black mb-4 leading-none">
+          {{ doc.title }}
+        </h1>
         <nuxt-content :document="doc" />
       </article>
       <EditOnGithub :document="doc" />
@@ -16,14 +19,16 @@
 </template>
 
 <script>
+import { getDocs } from '../store'
+
 export default {
   name: 'PageSlug',
-  middleware ({ params, redirect }) {
+  middleware({ params, redirect }) {
     if (params.slug === 'index') {
       redirect('/')
     }
   },
-  async asyncData ({ $content, store, app, params, error }) {
+  async asyncData({ $content, store, app, params, error }) {
     const slug = params.pathMatch || 'index'
 
     let doc
@@ -33,31 +38,53 @@ export default {
       return error({ statusCode: 404, message: 'Page not found' })
     }
 
-    const [prev, next] = await $content(app.i18n.locale)
-      .only(['title', 'slug'])
-      .sortBy('position', 'asc')
-      .surround(slug, { before: 1, after: 1 })
-      .fetch()
+    console.log({ slug })
+
+    const allDocs = await getDocs({ $content, $i18n: app.i18n }, (query) =>
+      query
+        .only(['title', 'slug'])
+        .sortBy('position', 'asc')
+    )
+    let thisDocIndex = 0
+    for (; thisDocIndex < allDocs.length; thisDocIndex++) {
+      if (allDocs[thisDocIndex].slug === slug) break
+    }
 
     return {
       doc,
-      prev,
-      next
+      prev: allDocs[thisDocIndex - 1],
+      next: allDocs[thisDocIndex + 1],
     }
   },
-  head () {
+  head() {
     return {
       meta: [
-        { hid: 'description', name: 'description', content: this.doc.description },
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.doc.description,
+        },
         // Open Graph
         { hid: 'og:title', property: 'og:title', content: this.doc.title },
-        { hid: 'og:description', property: 'og:description', content: this.doc.description },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.doc.description,
+        },
         // Twitter Card
-        { hid: 'twitter:title', name: 'twitter:title', content: this.doc.title },
-        { hid: 'twitter:description', name: 'twitter:description', content: this.doc.description }
-      ]
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.doc.title,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.doc.description,
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 
@@ -84,7 +111,7 @@ export default {
     @apply ml-6;
     &::before {
       content: '#';
-      @apply text-green-500 font-normal -ml-6 pr-1 absolute opacity-100;
+      @apply text-blue-700 font-normal -ml-6 pr-1 absolute opacity-100;
     }
   }
 
@@ -100,8 +127,8 @@ export default {
   & > a {
     @apply ml-6;
     &::before {
-      content: "#";
-      @apply text-green-500 font-normal -ml-5 pr-1 absolute opacity-100;
+      content: '#';
+      @apply text-blue-700 font-normal -ml-5 pr-1 absolute opacity-100;
     }
   }
 
@@ -166,7 +193,7 @@ export default {
     @apply bg-gray-100 p-1 text-lg shadow-xs rounded;
   }
 
-  & pre[class*="language-"] {
+  & pre[class*='language-'] {
     @apply rounded mt-0 mb-4 bg-gray-800 text-sm relative;
 
     > code {
