@@ -4,11 +4,11 @@
       class="w-full relative"
       @keydown.down="increment"
       @keydown.up="decrement"
-      @keydown.enter="go"
-    >
+      @keydown.enter="go">
       <label for="search" class="sr-only">Search</label>
       <div class="relative">
-        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+        <div
+          class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <IconSearch class="h-5 w-5 text-gray-500" />
         </div>
         <input
@@ -21,31 +21,36 @@
           type="search"
           autocomplete="off"
           @focus="onFocus"
-          @blur="onBlur"
-        />
+          @blur="onBlur" />
       </div>
     </div>
     <ul
       v-show="focus && (searching || results.length)"
       class="z-10 absolute w-full flex-1 top-0 bg-white dark:bg-gray-900 rounded-md border border-gray-300 dark:border-gray-700 overflow-hidden"
       :class="{ 'rounded-t-none': focus && results.length }"
-      style="margin-top: 37px;"
-    >
-      <li v-if="searching && !results.length" class="px-4 py-2">Searching...</li>
+      style="margin-top: 37px">
+      <li v-if="searching && !results.length" class="px-4 py-2">
+        Searching...
+      </li>
       <li
         v-for="(result, index) of results"
         :key="result.slug"
         @mouseenter="focusIndex = index"
-        @mousedown="go"
-      >
+        @mousedown="go">
         <NuxtLink
-          :to="localePath({ name: 'index-slug', params: { slug: result.slug !== 'index' ? result.slug : undefined } })"
+          :to="
+            localePath({
+              name: 'index-slug',
+              params: {
+                slug: result.slug !== 'index' ? result.slug : undefined,
+              },
+            })
+          "
           class="flex px-4 py-2 items-center leading-5 transition ease-in-out duration-150"
           :class="{
-            'text-green-500 bg-gray-200 dark:bg-gray-800': focusIndex === index
+            'text-green-500 bg-gray-200 dark:bg-gray-800': focusIndex === index,
           }"
-          @click="focus = false"
-        >
+          @click="focus = false">
           <span class="font-bold hidden sm:block">{{ result.category }}</span>
           <IconChevronRight class="w-3 h-3 mx-1 hidden sm:block" />
           {{ result.title }}
@@ -56,19 +61,21 @@
 </template>
 
 <script>
+import { getDocs } from '../store'
+
 export default {
-  data () {
+  data() {
     return {
       q: '',
       focus: false,
       focusIndex: -1,
       open: false,
       searching: false,
-      results: []
+      results: [],
     }
   },
   watch: {
-    async q (q) {
+    async q(q) {
       this.focusIndex = -1
       if (!q) {
         this.searching = false
@@ -76,51 +83,54 @@ export default {
         return
       }
       this.searching = true
-      this.results = await this.$content(this.$i18n.locale).sortBy('position', 'asc').limit(12).search(q).fetch()
+      this.results = await getDocs(this, (query) =>
+        query.sortBy('position', 'asc').limit(12).search(q)
+      )
       this.searching = false
-    }
+    },
   },
-  mounted () {
+  mounted() {
     window.addEventListener('keyup', this.keyup)
   },
-  beforeDestroy () {
+  beforeDestroy() {
     window.removeEventListener('keyup', this.keyup)
   },
   methods: {
-    onFocus () {
+    onFocus() {
       this.focus = true
       this.$emit('focus', true)
     },
-    onBlur () {
+    onBlur() {
       this.focus = false
       this.$emit('focus', false)
     },
-    keyup (e) {
+    keyup(e) {
       if (e.key === '/') {
         this.$refs.search.focus()
       }
     },
-    increment () {
+    increment() {
       if (this.focusIndex < this.results.length - 1) {
         this.focusIndex++
       }
     },
-    decrement () {
+    decrement() {
       if (this.focusIndex >= 0) {
         this.focusIndex--
       }
     },
-    go () {
+    go() {
       if (this.results.length === 0) {
         return
       }
-      const result = this.focusIndex === -1 ? this.results[0] : this.results[this.focusIndex]
+      const result =
+        this.focusIndex === -1 ? this.results[0] : this.results[this.focusIndex]
       const path = `/${result.slug !== 'index' ? result.slug : ''}`
       this.$router.push(path)
       // Unfocus the input and reset the query.
       this.$refs.search.blur()
       this.q = ''
-    }
-  }
+    },
+  },
 }
 </script>

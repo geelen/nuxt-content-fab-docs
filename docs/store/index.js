@@ -18,13 +18,8 @@ export const actions = {
     if (process.dev === false && state.categories[this.$i18n.locale]) {
       return
     }
-    const docs = await getDocs(
-      this,
-      (query) =>
-        query.only(['category', 'title', 'slug']).sortBy('position', 'asc'),
-      (docs, subdir) => {
-        docs.forEach((doc) => (doc.slug = `${subdir}/${doc.slug}`))
-      }
+    const docs = await getDocs(this, (query) =>
+      query.only(['category', 'title', 'slug']).sortBy('position', 'asc')
     )
 
     const categories = groupBy(docs, 'category')
@@ -35,7 +30,8 @@ export const actions = {
 
 export const DIRECTORIES = ['', 'guides', 'kb', 'blog']
 
-export const getDocs = async (that, filter_fn, subdir_fn) => {
+/* This is only needed cause Content can't handle nested directories, as far as I can see */
+export const getDocs = async (that, filter_fn) => {
   const docs = []
   await Promise.all(
     DIRECTORIES.map(async (subdir) => {
@@ -43,8 +39,9 @@ export const getDocs = async (that, filter_fn, subdir_fn) => {
         `${that.$i18n.locale}${subdir ? `/${subdir}` : ''}`
       )
       const dir_docs = await filter_fn(query).fetch()
-      console.log({ subdir, dir_docs })
-      if (subdir && subdir_fn) subdir_fn(dir_docs, subdir)
+      if (subdir)
+        dir_docs.forEach((doc) => (doc.slug = `${subdir}/${doc.slug}`))
+      console.log({ dir_docs })
       docs.push(...dir_docs)
     })
   )
