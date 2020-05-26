@@ -1,7 +1,7 @@
 ---
 title: 'Configuration'
 category: Knowledge Base
-position: 999
+position: 301
 ---
 
 # Configuration

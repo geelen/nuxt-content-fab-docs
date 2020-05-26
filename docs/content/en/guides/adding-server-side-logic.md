@@ -2,7 +2,7 @@
 title: Adding Server-Side Logic
 description: 'Use the FAB Runtime API to add server-side logic to your FAB'
 category: Guides
-position: 999
+position: 204
 ---
 
 One of the best use-cases for FABs, once your project [can produce a working FAB](/guides/getting-started), is to add small amounts of server-side logic to a mostly-static build, _without needing to change how you package & deploy your application_. This guide shows you how.

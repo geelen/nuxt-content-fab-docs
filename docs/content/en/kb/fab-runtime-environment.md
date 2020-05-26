@@ -1,7 +1,7 @@
 ---
 title: 'Server Component Restrictions'
 category: Knowledge Base
-position: 999
+position: 310
 ---
 
 # FAB Server Component Restrictions

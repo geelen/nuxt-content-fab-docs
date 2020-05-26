@@ -1,7 +1,7 @@
 ---
 title: 'Plugins'
 category: Knowledge Base
-position: 999
+position: 303
 ---
 
 # Plugins

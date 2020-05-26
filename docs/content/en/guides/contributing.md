@@ -2,7 +2,7 @@
 title: 'Contributing'
 description: 'Contribution guidelines'
 category: Guides
-position: 299
+position: 206
 ---
 
 # Contributing

@@ -4,11 +4,6 @@
       class="w-full lg:w-3/4 py-4 lg:pt-8 lg:pb-4 dark:border-gray-800"
       :class="{ 'lg:border-r': doc.toc && doc.toc.length }">
       <article class="lg:px-8">
-        <h1
-          v-if="doc.title !== 'Home'"
-          class="text-4xl font-black mb-4 leading-none">
-          {{ doc.title }}
-        </h1>
         <nuxt-content :document="doc" />
       </article>
       <EditOnGithub :document="doc" />
@@ -102,6 +97,10 @@ export default {
   & h3 > code {
     @apply bg-gray-800;
   }
+}
+
+.nuxt-content h1 {
+  @apply text-4xl font-black mb-4 leading-none;
 }
 
 .nuxt-content h2 {

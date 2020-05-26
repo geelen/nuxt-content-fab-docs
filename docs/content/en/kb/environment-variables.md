@@ -1,7 +1,7 @@
 ---
 title: 'Environment Variables'
 category: Knowledge Base
-position: 999
+position: 311
 ---
 
 # Environment Variables
@@ -10,9 +10,7 @@ position: 999
 
 - **Different API URLs for staging/testing/production backends**
 - **API keys for third-party services might be different<br/>**
-  <span style={{ marginLeft: '16px' }}>
-    (switching between testing/live payment integrations, for instance)
-  </span>
+(switching between testing/live payment integrations, for instance)
 - **Features may be turned on or off depending on environment**
 
 To support this, every time your FAB is executed, the current environment variables are injected. This is the `render` method at the heart of a FAB:
@@ -34,7 +32,7 @@ const render = async (request, settings) => {
 A FAB will default to passing in the **production** environment variables, plus any overrides that are defined by the hosting platform. For [Linc](https://linc.sh), that process is done in a dedicated **Environments** tab on the Site config:
 
 <a href="https://user-images.githubusercontent.com/23264/53847006-35035080-4003-11e9-80d3-b3b3706c6907.png" target="_blank">
-<img width="480" align="center" style={{margin: '32px auto', display: 'block', boxShadow: '0 8px 16px rgba(0,0,0,0.25)', borderRadius: '4px'}} alt="Linc environment screenshot" src="https://user-images.githubusercontent.com/23264/53847006-35035080-4003-11e9-80d3-b3b3706c6907.png"/>
+<img width="480" align="center" alt="Linc environment screenshot" src="https://user-images.githubusercontent.com/23264/53847006-35035080-4003-11e9-80d3-b3b3706c6907.png"/>
 </a>
 
 This defines a `STAGING` environment that will be available through Linc's environment-specific Preview URLs (like `https://example-repo-[FAB_ID]-staging.linc-preview.sh/`). For more information, see the Linc docs.

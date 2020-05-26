@@ -1,7 +1,7 @@
 ---
 title: 'Understanding Assets'
 category: Knowledge Base
-position: 999
+position: 391
 ---
 
 # Understanding Assets

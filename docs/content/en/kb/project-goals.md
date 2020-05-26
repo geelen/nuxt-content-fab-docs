@@ -1,7 +1,7 @@
 ---
 title: 'FAB Project Goals'
 category: Knowledge Base
-position: 999
+position: 392
 ---
 
 # FAB Project Goals

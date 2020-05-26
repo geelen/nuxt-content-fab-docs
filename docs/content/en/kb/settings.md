@@ -1,7 +1,7 @@
 ---
 title: 'Settings'
 category: Knowledge Base
-position: 999
+position: 302
 ---
 
 # FAB Settings
