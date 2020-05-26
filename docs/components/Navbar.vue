@@ -23,7 +23,7 @@
             rel="noopener noreferrer"
             title="Twitter"
             name="Twitter"
-            class="hidden lg:block hover:text-green-500 mr-2"
+            class="hidden lg:block hover:text-blue-600 mr-2"
           >
             <IconTwitter class="w-6 h-6" />
           </a>
@@ -33,12 +33,12 @@
             rel="noopener noreferrer"
             title="Github"
             name="Github"
-            class="hidden lg:block hover:text-green-500 mr-4"
+            class="hidden lg:block hover:text-blue-600 mr-4"
           >
             <IconGithub class="w-6 h-6" />
           </a>
           <button
-            class="lg:hidden p-2 pr-0 rounded-md hover:text-green-500 focus:outline-none focus:outline-none"
+            class="lg:hidden p-2 pr-0 rounded-md hover:text-blue-600 focus:outline-none focus:outline-none"
             aria-label="Hamburger Menu"
             @click.stop="menu = !menu"
           >

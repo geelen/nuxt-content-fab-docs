@@ -28,7 +28,7 @@
                       <NuxtLink
                         :to="toLink(doc.slug)"
                         class="px-2 rounded font-medium py-1 block text-gray-600 dark:text-gray-500 hover:text-gray-800 dark-hover:text-gray-100"
-                        exact-active-class="text-green-600 bg-green-100 hover:text-green-600 dark:text-green-200 dark:bg-green-900 dark-hover:text-green-200">
+                        exact-active-class="text-blue-600 bg-blue-100 hover:text-blue-600 dark:text-green-200 dark:bg-green-900 dark-hover:text-green-200">
                         {{ doc.title }}
                       </NuxtLink>
                     </li>
@@ -44,7 +44,7 @@
                 rel="noopener noreferrer"
                 title="Twitter"
                 name="Twitter"
-                class="hover:text-green-500 mr-4 ml-2">
+                class="hover:text-blue-600 mr-4 ml-2">
                 <icon-twitter class="w-6 h-6" />
               </a>
 
@@ -54,7 +54,7 @@
                 rel="noopener noreferrer"
                 title="Github"
                 name="Github"
-                class="hover:text-green-500 mr-4">
+                class="hover:text-blue-600 mr-4">
                 <icon-github class="w-6 h-6" />
               </a>
               <ColorSwitcher />

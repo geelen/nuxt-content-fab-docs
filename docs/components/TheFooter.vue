@@ -11,8 +11,8 @@
         <Dropdown v-if="availableLocales.length">
           <template #trigger="{ open }">
             <button
-              class="p-2 rounded-md hover:text-green-500 focus:outline-none focus:outline-none"
-              :class="{ 'text-green-500': open }"
+              class="p-2 rounded-md hover:text-blue-600 focus:outline-none focus:outline-none"
+              :class="{ 'text-blue-600': open }"
             >
               <icon-translate class="w-6 h-6" />
             </button>
@@ -23,7 +23,7 @@
               <nuxt-link
                 v-if="$i18n.locale !== locale.code"
                 :to="switchLocalePath(locale.code)"
-                class="flex px-4 items-center hover:text-green-500 leading-7"
+                class="flex px-4 items-center hover:text-blue-600 leading-7"
               >{{ locale.name }}</nuxt-link>
             </li>
           </ul>
