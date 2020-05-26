@@ -61,9 +61,7 @@ export default {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     // Doc: https://github.com/nuxt-community/color-mode-module
-    '@nuxtjs/color-mode',
-    // https://github.com/bdrtsky/nuxt-ackee
-    'nuxt-ackee'
+    '@nuxtjs/color-mode'
   ],
   /*
   ** Nuxt.js modules
