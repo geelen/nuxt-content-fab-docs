@@ -1,7 +1,6 @@
 ---
 title: Converting Custom SSR
 description: 'Converting Custom SSR'
-position: 299
 category: Guides
 position: 999
 ---

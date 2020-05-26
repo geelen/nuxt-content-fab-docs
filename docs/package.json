@@ -19,6 +19,7 @@
     "lodash.groupby": "^4.6.0",
     "nuxt-edge": "^2.13.0-26500336.1e53e38f",
     "nuxt-i18n": "^6.11.1",
+    "prettier": "https://github.com/adamJLev/prettier#a0cd45b4cbea2039941f5cea0dccacf506b0fd2e",
     "prism-themes": "^1.4.0",
     "tailwindcss": "^1.4.6",
     "vue-scrollactive": "^0.9.3"
