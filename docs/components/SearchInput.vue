@@ -38,14 +38,7 @@
         @mouseenter="focusIndex = index"
         @mousedown="go">
         <NuxtLink
-          :to="
-            localePath({
-              name: 'index-slug',
-              params: {
-                slug: result.slug !== 'index' ? result.slug : undefined,
-              },
-            })
-          "
+          :to="`/${result.slug !== 'index' ? result.slug : ''}`"
           class="flex px-4 py-2 items-center leading-5 transition ease-in-out duration-150"
           :class="{
             'text-blue-600 bg-gray-200 dark:bg-gray-800': focusIndex === index,
@@ -129,7 +122,7 @@ export default {
       this.$router.push(path)
       // Unfocus the input and reset the query.
       this.$refs.search.blur()
-      this.q = ''
+      //this.q = ''
     },
   },
 }
