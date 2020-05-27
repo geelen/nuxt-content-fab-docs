@@ -4,7 +4,7 @@
     <main class="container mx-auto px-4 md:px-8">
       <div class="flex flex-wrap relative">
         <aside
-          class="h-screen w-full md:w-1/5 fixed md:sticky top-0 left-0 bottom-0 pt-16 md:-mt-16 md:block bg-white dark:bg-gray-900 md:bg-transparent z-30 md:border-r dark:border-gray-800"
+          class="h-screen w-full md:w-1/5 fixed md:sticky top-0 left-0 bottom-0 pt-16 md:-mt-16 md:block bg-white dark:bg-gray-900 md:bg-transparent z-30 md:border-r"
           :class="{ block: menu, hidden: !menu }">
           <div class="container mx-auto overflow-auto h-full">
             <div
