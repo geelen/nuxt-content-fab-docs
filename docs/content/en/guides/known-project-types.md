@@ -4,7 +4,7 @@ category: Guides
 position: 202
 ---
 
-# Known Project Types (for `fab init`)
+# Known Project Types <small>(for `fab init`)</small>
 
 ## Create React App
 

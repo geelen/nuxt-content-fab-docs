@@ -1,15 +1,18 @@
 <template>
   <div class="flex flex-wrap-reverse suka">
     <div
-      class="w-full lg:w-3/4 py-4 lg:pt-8 lg:pb-4 dark:border-gray-800"
-      :class="{ 'lg:border-r': doc.toc && doc.toc.length }">
+      class="w-full xl:w-3/4 py-4 lg:pt-8 lg:pb-4 dark:border-gray-800"
+      :class="{ 'xl:border-r': doc.toc && doc.toc.length }">
       <article class="lg:px-8">
         <nuxt-content :document="doc" />
       </article>
       <EditOnGithub :document="doc" />
       <ArticlePrevNext :prev="prev" :next="next" class="lg:px-8 mt-4" />
     </div>
-    <ArticleToc v-if="doc.toc && doc.toc.length" :toc="doc.toc" />
+    <ArticleToc
+      class="hidden xl:block"
+      v-if="doc.toc && doc.toc.length"
+      :toc="doc.toc" />
   </div>
 </template>
 
@@ -33,12 +36,8 @@ export default {
       return error({ statusCode: 404, message: 'Page not found' })
     }
 
-    console.log({ slug })
-
     const allDocs = await getDocs({ $content, $i18n: app.i18n }, (query) =>
-      query
-        .only(['title', 'slug'])
-        .sortBy('position', 'asc')
+      query.only(['title', 'slug']).sortBy('position', 'asc')
     )
     let thisDocIndex = 0
     for (; thisDocIndex < allDocs.length; thisDocIndex++) {
@@ -100,11 +99,14 @@ export default {
 }
 
 .nuxt-content h1 {
-  @apply text-4xl font-black mb-4 leading-none;
+  @apply text-5xl font-light mt-8 mb-12 leading-none text-center;
+  & small {
+    @apply block text-2xl mt-4;
+  }
 }
 
 .nuxt-content h2 {
-  @apply text-3xl font-black mb-4 pb-1 border-b -mt-16 pt-24;
+  @apply text-3xl font-extrabold mb-4 pb-1 -mt-16 pt-24;
 
   & > a {
     @apply ml-6;
@@ -121,7 +123,7 @@ export default {
   }
 }
 .nuxt-content h3 {
-  @apply text-2xl font-extrabold mb-2 pb-1 border-b -mt-16 pt-20;
+  @apply text-2xl font-extrabold mb-2 pb-1 -mt-16 pt-20;
 
   & > a {
     @apply ml-6;
@@ -201,9 +203,38 @@ export default {
     }
   }
 
+  & h5 {
+    @apply pb-4 text-xl font-bold;
+    & a {
+      @apply no-underline;
+    }
+  }
+
   & video {
     @apply w-full border rounded shadow-md;
   }
+  & .inline-images + p {
+    @apply pb-4;
+    & img {
+      @apply inline;
+    }
+  }
+
+
+& .inline-video {
+  @apply mt-8 mb-8;
+  width: 100%;
+  padding-top: 56.25%;
+  position: relative;
+
+  & > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
 }
 
 .nuxt-content-highlight {
